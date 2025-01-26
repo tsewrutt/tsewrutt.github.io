@@ -15,30 +15,48 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about" class="section">
+        <section id="about" class="section about-section">
             <h2>About Me</h2>
-            <p>Welcome to my portfolio! I am [Your Profession], specializing in [Your Specialty]. I love working on projects that [Your Passion].</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/icon.png" alt="Your Picture">
+                </div>
+                <p>Welcome to my portfolio! I am [Your Profession], specializing in [Your Specialty]. I love working on projects that [Your Passion].</p>
+            </div>
         </section>
 
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="projects-container">
-                <div class="project">
+                <div class="project" onclick="openPopup('project1')">
                     <h3>Project 1</h3>
-                    <p>Description of your first project.</p>
+                    <p>Click to learn more.</p>
                 </div>
-                <div class="project">
+                <div class="project" onclick="openPopup('project2')">
                     <h3>Project 2</h3>
-                    <p>Description of your second project.</p>
+                    <p>Click to learn more.</p>
                 </div>
-                <div class="project">
+                <div class="project" onclick="openPopup('project3')">
                     <h3>Project 3</h3>
-                    <p>Description of your third project.</p>
+                    <p>Click to learn more.</p>
+                </div>
+                <div class="project" onclick="openPopup('project4')">
+                    <h3>Project 4</h3>
+                    <p>Click to learn more.</p>
+                </div>
+                <div class="project" onclick="openPopup('project5')">
+                    <h3>Project 5</h3>
+                    <p>Click to learn more.</p>
+                </div>
+                <div class="project" onclick="openPopup('project6')">
+                    <h3>Project 6</h3>
+                    <p>Click to learn more.</p>
                 </div>
             </div>
         </section>
@@ -57,5 +75,30 @@
     <footer class="footer">
         <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-details"></div>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(projectId) {
+            const popupDetails = {
+                project1: '<h3>Project 1</h3><p>Details about Project 1 go here.</p>',
+                project2: '<h3>Project 2</h3><p>Details about Project 2 go here.</p>',
+                project3: '<h3>Project 3</h3><p>Details about Project 3 go here.</p>',
+            };
+
+            document.getElementById('popup-details').innerHTML = popupDetails[projectId];
+            document.getElementById('popup').classList.remove('hidden');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
