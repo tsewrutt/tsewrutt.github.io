@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>It's Toushal!</title>
-     <link rel="icon" href="images/icon.png" type="image/png"> 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content">
-        <img src="images/profile.png" alt="Toushal's Profile" height="100px" width="100px" style="float:left; margin-top: 10px;">
-        <h1>Toushal Sewruttun</h1>
-        <!-- For name here we'll be adding a custom image for text'-->
-        <div>
-            <p style="color:rgb(80, 105, 124); margin-right:2%; line-height: 25px; margin-left: 270px; margin-top: 0px;">
-                "This is me. I am cool and I can build a website."
-            </p>
-        </div>
-    </div>
-    <p style="color:#5a8dabff; font-weight: bold; margin-right: 15%;"> - - Stuff I worked on:</p>
-    <p style="color:#5a8dabff; font-weight: bold; margin-right: 15%;"> - - Projects:</p>
-    <p style="color:#5a8dabff; font-weight: bold; margin-right: 15%;"> - - Side Projects:</p>
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Your Name</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am [Your Profession], specializing in [Your Specialty]. I love working on projects that [Your Passion].</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of your first project.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description of your second project.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>Description of your third project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="section">
+            <h2>Resume</h2>
+            <p>You can download my resume <a href="resume.pdf" target="_blank">here</a>.</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, email me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
