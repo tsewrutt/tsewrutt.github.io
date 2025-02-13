@@ -12,13 +12,54 @@
 
 body {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+  background-color: var(--dark-color);
+  overflow: hidden;
+  perspective: 1000px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: white;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+#yes-button {
+  background-color: #ff4081;
+  color: white;
+}
+
+#no-button {
+  background-color: #ccc;
+  color: black;
+}
+/* body {
+  display: flex;
   align-items: flex-end;
   justify-content: center;
   min-height: 100vh;
   background-color: var(--dark-color);
   overflow: hidden;
   perspective: 1000px;
-}
+} */
 
 .night {
   position: fixed;
@@ -280,7 +321,8 @@ body {
   animation-delay: 3.5s;
 }
 .flower__grass {
-  --c: #159faa;
+  /* #159faa */
+  --c: #af6347;
   --line-w: 1.5vmin;
   position: absolute;
   bottom: 12vmin;
@@ -444,6 +486,7 @@ body {
 .flower__g-long {
   --w: 2vmin;
   --h: 6vmin;
+  /* #159faa */
   --c: #159faa;
   position: absolute;
   bottom: 10vmin;
@@ -813,7 +856,8 @@ body {
 .long-g .leaf {
   --w: 15vmin;
   --h: 40vmin;
-  --c: #1aaa15;
+  /* #1aaa15 */
+  --c: #67b067;
   position: absolute;
   bottom: 0;
   width: var(--w);
@@ -981,6 +1025,7 @@ body {
     transform: scale(0);
   }
 }
+
 .not-loaded * {
   animation-play-state: paused !important;
 }
