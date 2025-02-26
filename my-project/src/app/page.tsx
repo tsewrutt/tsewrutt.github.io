@@ -1,77 +1,99 @@
-"use client"
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import projects from "../data/projects";
-import ProjectModal from "../javascript/ProjectModal";
+// "use client"
+// import React, { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import projects from "../data/projects";
+// import ProjectModal from "../javascript/ProjectModal";
 
-const HeroSection = () => (
-  <div className="text-center py-20 px-6">
-    <img src="/profile.jpg" alt="Profile" className="w-32 h-32 rounded-full mx-auto mb-4" />
-    <h3 className="text-4xl font-bold">Hello, I'm the guy who made this <span className="text-blue-400">John Jameson James</span></h3>
-    <p className="mt-4 text-gray-400">A passionate developer creating amazing web experiences.</p>
-    <div className="mt-6 space-x-4">
-      <a href="mailto:tsewrutt@unb.ca" className="text-blue-400 hover:underline">Email</a>
-      <a href="https://www.linkedin.com/in/tsewrutt" className="text-blue-400 hover:underline">LinkedIn</a>
-      <a href="https://github.com/tsewrutt" className="text-blue-400 hover:underline">GitHub</a>
-    </div>
-  </div>
-);
+// const HeroSection = () => (
+//   <div className="text-center py-20 px-6">
+//     <img src="/profile.jpg" alt="Profile" className="w-32 h-32 rounded-full mx-auto mb-4" />
+//     <h3 className="text-4xl font-bold">Hello, I'm the guy who made this <span className="text-blue-400">John Jameson James</span></h3>
+//     <p className="mt-4 text-gray-400">A passionate developer creating amazing web experiences.</p>
+//     <div className="mt-6 space-x-4">
+//       <a href="mailto:tsewrutt@unb.ca" className="text-blue-400 hover:underline">Email</a>
+//       <a href="https://www.linkedin.com/in/tsewrutt" className="text-blue-400 hover:underline">LinkedIn</a>
+//       <a href="https://github.com/tsewrutt" className="text-blue-400 hover:underline">GitHub</a>
+//     </div>
+//   </div>
+// );
 
 
-const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null); //No selection made initially
-  
-  return (
-    <div className="py-16 px-6">
-      <h3 className="text-3xl font-semibold text-blue-400">Projects</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-        {projects.slice(0, showAll ? projects.length : 6).map(project => (
-          <div key={project.id} className="bg-gray-800 p-6 rounded-lg shadow-lg flex cursor-pointer hover:bg-gray-700 transition" onClick={() => setSelectedProject(project)}>
-            <img src={project.img} alt={project.title} className="w-[100px] h-[50px] rounded-lg mr-4" />
-            <div>
-              <h4 className="text-xl font-semibold">{project.title}</h4>
-              <p className="text-gray-400">{project.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      {!showAll && (
-        <button onClick={() => setShowAll(true)} className="mt-6 px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-500">
-          View More
-        </button>
-      )}
+// type Project = {
+//   id: number;
+//   title: string;
+//   desc: string;
+//   skill: string;
+//   img: string;
+//   date: string;
+// };
 
-      {/* Project Modal */}
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-    </div>
-  );
-};
+// const Projects = () => {
+//   const [showAll, setShowAll] = useState(false);
+//   const [selectedProject, setSelectedProject] = useState<Project | null>(null); // ✅ Define the correct type
 
-const App = () => {
-  return (
-    <Router>
-      <div className="min-h-screen bg-gray-900 text-white font-sans">
-        {/* Navbar */}
-        <nav className="flex justify-between items-center p-6 bg-gray-800 shadow-md">
-          <h1 className="text-2xl font-bold">My Portfolio</h1>
-          <div className="space-x-6">
-            <Link to="/" className="hover:text-blue-400">Home</Link>
-            <Link to="/projects" className="hover:text-blue-400">Projects</Link>
-          </div>
-        </nav>
+//   return (
+//     <div className="py-16 px-6 relative">
+//     {/* Move modal outside the main container to ensure it overlays correctly */}
+//     {selectedProject && (
+//       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+//     )}
+//       <h3 className="text-3xl font-semibold text-blue-400">Projects</h3>
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+//         {projects.slice(0, showAll ? projects.length : 6).map((project) => (
+//           <div
+//             key={project.id}
+//             className="bg-gray-800 p-6 rounded-lg shadow-lg flex cursor-pointer hover:bg-gray-700 transition"
+//             onClick={() => setSelectedProject(project)}
+//           >
+//             <img
+//               src={project.img}
+//               alt={project.title}
+//               className="w-[100px] h-[50px] rounded-lg mr-4"
+//             />
+//             <div>
+//               <h4 className="text-xl font-semibold">{project.title}</h4>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       {!showAll && (
+//         <button
+//           onClick={() => setShowAll(true)}
+//           className="mt-6 px-4 py-2 bg-blue-400 text-white rounded hover:bg-blue-500"
+//         >
+//           View More
+//         </button>
+//       )}
 
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-};
 
-export default App;
+//     </div>
+//   );
+// };
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div className="min-h-screen bg-gray-900 text-white font-sans">
+//         {/* Navbar */}
+//         <nav className="flex justify-between items-center p-6 bg-gray-800 shadow-md">
+//           <h1 className="text-2xl font-bold">My Portfolio</h1>
+//           <div className="space-x-6">
+//             <Link to="/" className="hover:text-blue-400">Home</Link>
+//             <Link to="/projects" className="hover:text-blue-400">Projects</Link>
+//           </div>
+//         </nav>
+
+//         {/* Routes */}
+//         <Routes>
+//           <Route path="/" element={<HeroSection />} />
+//           <Route path="/projects" element={<Projects />} />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// };
+
+// export default App;
 
 
 
@@ -174,3 +196,50 @@ export default App;
 //     </div>
 //   );
 //}
+
+"use client"
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Projects from "./project"; // Import the Projects component
+
+const HeroSection = () => (
+  <div className="text-center py-20 px-6">
+    <img src="/profile.jpg" alt="Profile" className="w-32 h-32 rounded-full mx-auto mb-4" />
+    <h3 className="text-4xl font-bold">Hello, I'm the guy who made this <span className="text-blue-400">John Jameson James</span></h3>
+    <p className="mt-4 text-gray-400">A passionate developer creating amazing web experiences.</p>
+    <div className="mt-6 space-x-4">
+      <a href="mailto:tsewrutt@unb.ca" className="text-blue-400 hover:underline">Email</a>
+      <a href="https://www.linkedin.com/in/tsewrutt" className="text-blue-400 hover:underline">LinkedIn</a>
+      <a href="https://github.com/tsewrutt" className="text-blue-400 hover:underline">GitHub</a>
+    </div>
+  </div>
+);
+
+
+
+
+
+const App = () => {
+    return (
+      <Router>
+        <div className="min-h-screen bg-gray-900 text-white font-sans">
+          {/* Navbar */}
+          <nav className="flex justify-between items-center p-6 bg-gray-800 shadow-md">
+            <h1 className="text-2xl font-bold">My Portfolio</h1>
+            <div className="space-x-6">
+              <Link to="/" className="hover:text-blue-400">Home</Link>
+              <Link to="/projects" className="hover:text-blue-400">Projects</Link>
+            </div>
+          </nav>
+  
+          {/* Routes */}
+          <Routes>
+            <Route path="/" element={<HeroSection />} />
+            <Route path="/projects" element={<Projects />} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  };
+  
+  export default App;
