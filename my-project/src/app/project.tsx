@@ -133,7 +133,7 @@ const Projects = () => {
           <div
             key={project.id}
             className="bg-gray-800 p-4 rounded-lg cursor-pointer hover:bg-gray-700 transition"
-            onClick={() => setSelectedProject({ project })}
+            onClick={() => setSelectedProject(project)}
           >
             <h3 className="text-xl font-semibold">{project.title}</h3>
             <p className="text-gray-400 text-sm">{project.skill}</p>

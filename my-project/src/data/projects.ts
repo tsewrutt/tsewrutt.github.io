@@ -4,17 +4,17 @@ export type Project = {
   desc: string;
   img: string;
   skill: string;
+  date: string;
 };
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: 1,
     title: "Calendar Scheduler",
     desc: "Developed a calendar web application for the Canadian Engineering Leadership Conferences, enabling over 200 engineering students to manage personalized event schedules throughout the conference. ",
     skill:
       "react, postgresql, node.js, tailwind.css, html, cloudflare, digital ocean",
-    img: "data/pictures/project3.jpg",
-    // img: "/data/pictures/project3.jpg",
+    img: "/pictures/project3.jpg",
     date: "2024-12",
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
     desc: "Dance XR allows users to capture, edit, and sequence dance moves using intuitive mixed-reality controls. Worked with an AI model to create a markerless motion capture system. ",
     skill:
       "mixed reality, unity c#, inverse kinematic, animation rigging, motion capture, spatial computing, pose-estimation",
-    img: "pictures/project3.jpg",
+    img: "/pictures/project3.jpg",
     date: "2024-Present",
   },
   {
