@@ -14,7 +14,7 @@ export const projects: Project[] = [
     desc: "Developed a calendar web application for the Canadian Engineering Leadership Conferences, enabling over 200 engineering students to manage personalized event schedules throughout the conference. ",
     skill:
       "react, postgresql, node.js, tailwind.css, html, cloudflare, digital ocean",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/aurora1edit.jpg",
     date: "2024-12",
   },
   {
@@ -23,7 +23,7 @@ export const projects: Project[] = [
     desc: "Dance XR allows users to capture, edit, and sequence dance moves using intuitive mixed-reality controls. Worked with an AI model to create a markerless motion capture system. ",
     skill:
       "mixed reality, unity c#, inverse kinematic, animation rigging, motion capture, spatial computing, pose-estimation",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/aurora1edit.jpg",
     date: "2024-Present",
   },
   {
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     desc: "Involved developing an immersive environment for their haptic glove, enabling users to experience tactile feedback while interacting with virtual objects. ",
     skill:
       "mvc, human-computer interaction, event handling, graphical user interface, object-oriented programming, user experience, mixed reality ",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/project3edit.jpg",
     date: "2024-04",
   },
   {
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     desc: "Studied how neurotic behaviors in autonomous robots affect human willingness to maintain them, using experimental testing and a remote-control app. (Publication in progress) ",
     skill:
       "human-robot interaction, human behavior, autonomous robotics, teleoperation, experiment design, qualitative/quantitative analysis ",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/aurora1edit.jpg",
     date: "2023-12",
   },
   {
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     desc: "Explored how alterations in crosshair colors influence target and background perception, aiming to enhance overall shooting accuracy and adaptability.",
     skill:
       "mvc, human-computer interaction, event handling, graphical user interface, object-oriented programming, user experience, mixed reality ",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/project3edit.jpg",
     date: "2023-03",
   },
   {
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     desc: "Involved developing an immersive environment for their haptic glove, enabling users to experience tactile feedback while interacting with virtual objects. ",
     skill:
       "mvc, human-computer interaction, event handling, graphical user interface, object-oriented programming, user experience, mixed reality ",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/project3edit.jpg",
     date: "2024",
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     desc: "Involved developing an immersive environment for their haptic glove, enabling users to experience tactile feedback while interacting with virtual objects. ",
     skill:
       "mvc, human-computer interaction, event handling, graphical user interface, object-oriented programming, user experience, mixed reality ",
-    img: "/pictures/project3.jpg",
+    img: "/pictures/project3edit.jpg",
     date: "2024",
   },
 ];
