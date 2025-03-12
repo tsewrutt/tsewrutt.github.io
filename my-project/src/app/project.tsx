@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import { projects, Project } from "../data/projects"; // Import the project data
 import ProjectModal from "../javascript/ProjectModal"; // Import the modal component
-// id: number; title: string
-
 
 
 const Projects = () => {
@@ -27,7 +25,7 @@ const Projects = () => {
             onClick={() => setSelectedProject(project)}
           >
             <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-gray-400 text-sm">{project.skill}</p>
+            <p className="text-gray-400 text-sm line-clamp-2">{project.skill}</p>
           </div>
         ))}
       </div>
