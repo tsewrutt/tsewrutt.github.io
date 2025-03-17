@@ -53,10 +53,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
                     <h3 className="text-xl font-bold text-white sm:text-sm md:text-2xl">
                         {selectedProject.title}
                     </h3>
-                    <p className="text-gray-400 text-sm sm:text-base md:text-sm mt-2 truncate max-w-300px">
+                    <p className="text-gray-400 text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-300px">
                         {selectedProject.desc}
                     </p>
-                    <p className="text-gray-400 text-sm sm:text-base md:text-sm mt-2 truncate max-w-screen-lg">
+                    <p className="text-gray-400 text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-screen-lg">
                         <strong>Skills:</strong> {selectedProject.skill}
                     </p>
 
