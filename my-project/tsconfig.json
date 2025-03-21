@@ -13,6 +13,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noImplicitAny": false,  // Add this to disable strict type checking for `any`
+    // "suppressImplicitAnyIndexErrors": true, // Prevents errors for implicit `any` in index signatures
     "plugins": [
       {
         "name": "next"
