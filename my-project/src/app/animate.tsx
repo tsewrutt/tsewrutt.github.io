@@ -1,21 +1,10 @@
 import { motion } from "framer-motion";
 
-export const AnimatedText = () => {
-  return (
-    <motion.h1
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="text-4xl font-bold text-white">
-      Welcome to My Portfolio!
-    </motion.h1>
-  );
-};
 //Taking text as input from page
 export const TypewriterAnimation = ({ text }) => {
   const letters = text.split(""); //split up letters from txt
   return (
-    <h3 className="text-4xl font-bold bg-gray-800">
+    <h3 className="text-4xl font-bold" style={{fontFamily: "'VT323', monospace"}}>
       {letters.map((letter, index) => (
         <motion.span 
         key={index}
