@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { projects, Project } from "../data/projects"; // Import the project data
-import ProjectModal from "../javascript/ProjectModal"; // Import the modal component
+import { projects, Project } from "../../data/projects"; // Import the project data
+import ProjectModal from "../../javascript/ProjectModal"; // Import the modal component
 
 
 const Projects = () => {
