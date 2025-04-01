@@ -2,21 +2,17 @@
 import { TypewriterAnimation } from "./animate"
 // import Projects from "./projects"; // Import the Projects component
 import Link from "next/link";
+import Image from 'next/image'
 
 const App = () => {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
-          {/* Navbar */}
-          <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/80 shadow-md flex justify-between items-center p-4">
-            <h1 className="text-2xl font-semibold text-gray-200">Toushal Sewruttun</h1>
-            <div className="space-x-6">
-              <Link href ="/" className="hover:text-blue-400 transition">Home</Link>
-              <Link href ="/projects" className="hover:text-blue-400 transition">Projects</Link>
-            </div>
-          </nav>
+
           <div className="flex flex-col items-center bg-[#121212] min-h-screen text-white">
           {/* Cover Banner */}
           <div className="relative w-full h-60 bg-[#1E1E1E]">
+
+            {/* Have to fix immage LCP problem and use next images */}
             <img src="/pictures/aurora2.jpeg" alt="Banner" className="w-full h-full object-cover opacity-60"/>
             {/* Profile Picture (Overlapping the Banner) */}
             <div className="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-[#00D4FF] bg-[#232323] rounded-full shadow-lg">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Project } from "../data/projects";
+import Image from 'next/image'
 
 interface ProjectModalProps {
     selectedProject: Project | null;
