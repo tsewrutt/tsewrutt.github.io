@@ -43,14 +43,14 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-white text-center mb-6">Projects</h2>
       </div>
       {/* Project List */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500 ease-in-out">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-500 ease-in-out">
         {currentProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-gray-800 p-4 rounded-lg cursor-pointer hover:bg-gray-700 transition-transform duration-500 ease-in-out transform hover:scale-105"
+            className="bg-gray-800 pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-gray-700 transition-transform duration-500 ease-in-out transform hover:scale-105"
             onClick={() => setSelectedProject(project)}
           >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
+            <h3 className="text-xl font-semibold pb-2">{project.title}</h3>
             <div className="relative w-full h-48 mb-2 rounded overflow-hidden">
               <Image
                 src = {project.img}
@@ -60,7 +60,12 @@ const Projects = () => {
                 className="object-cover"
               />
             </div>
-            <p className="text-gray-400 text-sm line-clamp-2 ">{project.skill}</p>
+            <p className="text-gray-400 text-sm line-clamp-2 ">
+              
+              <strong>keywords:</strong>
+              {" " + project.skill}
+
+            </p>
           </div>
         ))}
       </div>
