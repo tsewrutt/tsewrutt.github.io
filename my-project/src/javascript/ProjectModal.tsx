@@ -12,7 +12,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
     if (!selectedProject) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm p-4 transition-transform duration-500 ease-in-out">
+        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm p-4 transition-transform duration-500 ease-in-out"onClick={onClose} >
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-screen-lg
                             flex flex-col sm:flex-row md:flex-row gap-4 relative">
 
@@ -38,7 +38,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
 
                     <button
                         className="absolute top-3 right-3 text-white rounded 
-                                hover:bg-blue-600 transition sm:w-[25px] md:w-[25px]"
+                                hover:bg-gray-600 transition sm:w-[25px] md:w-[25px]"
                         onClick={onClose}
                     >
                         <X/>

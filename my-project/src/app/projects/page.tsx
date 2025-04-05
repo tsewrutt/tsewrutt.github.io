@@ -60,12 +60,16 @@ const Projects = () => {
                 className="object-cover"
               />
             </div>
-            <p className="text-gray-400 text-sm line-clamp-2 ">
-              
-              <strong>keywords:</strong>
-              {" " + project.skill}
-
-            </p>
+            <div className="text-gray-500 text-sm flex flex-wrap gap-2 mt-2">
+              {project.skill.split(",").map((keyword, index) => (
+                <span
+                  key={index}
+                  className="bg-black text-white px-2 py-1 rounded-full text-xs whitespace-nowrap"
+                >
+                  {keyword.trim()}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
