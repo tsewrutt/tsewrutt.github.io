@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Home | Toushal Sewruttun",
   description: "Created by Toushal Sewruttun",
-  icons:"/pictures/aurora1edit.jpg",
+  icons:"/pictures/favicon.png",
 };
 
 export default function RootLayout({
@@ -28,11 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Navbar */}
-          <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/80 shadow-md flex justify-between items-center p-4">
-            <h1 className="text-2xl font-semibold text-gray-200">Toushal Sewruttun</h1>
-            <div className="space-x-6">
+          <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-900/80 shadow-md flex justify-center items-center p-4">
+            <h1 className="text-2xl justify-between mx-auto font-semibold text-gray-200">Toushal Sewruttun</h1>
+            <div className="mx-auto space-x-6">
               <Link href ="/" className="hover:text-blue-400 transition">Home</Link>
               <Link href ="/projects" className="hover:text-blue-400 transition">Projects</Link>
+              {/* <Link href ="/projects" className="hover:text-blue-400 transition">Misc</Link> */}
             </div>
           </nav>
         {children}

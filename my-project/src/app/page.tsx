@@ -1,5 +1,6 @@
 "use client"
 import { TypewriterAnimation, StarryBackground } from "./animate"
+import { Download } from "lucide-react";
 import Link from "next/link";
 import Image from 'next/image'
 
@@ -7,18 +8,17 @@ const App = () => {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
 
-          <div className="flex flex-col items-center bg-[#121212] min-h-screen text-white">
-          
+          <div className="flex flex-col items-center bg-[#000000] min-h-screen text-white">
           <StarryBackground/>
           {/* Cover Banner */}
-            <div className="relative w-full h-75 bg-[#1E1E1E] z-1">
-              {/* Fixing LCP issue by using Next.js Image */}
+            <div className="relative w-full h-75 bg-[#000000] z-1">
+              
               <Image 
                 src="/pictures/banner.jpeg" 
                 alt="Banner"
-                fill // Replaces layout="fill"
-                className="object-cover opacity-60" // Replaces objectFit="cover"
-                priority // Ensures this image loads first
+                fill
+                className="object-cover opacity-60"
+                priority
               />
 
               {/* Profile Picture (Overlapping the Banner) */}
@@ -48,10 +48,20 @@ const App = () => {
             </div>
       
             {/* Projects Button */}
-            <div className="mt-6">
-              <Link href ="/projects" className="px-4 py-2 bg-[#00D4FF] text-black rounded-lg shadow-md hover:bg-[#00AACC] transition">
+            <div className="mt-6 flex justify-center space-x-4">
+              <Link href ="/projects" className="px-4 py-1 bg-[#00D4FF] text-black rounded-lg shadow-md hover:bg-[#00AACC] transition">
                 View Projects
               </Link>
+              
+              <Link
+                href="personal/resume.pdf" // Link to the resume in the public directory
+                download="Toushal_Sewruttun_Resume" // Optional: specify the file name when downloaded
+                className="flex px-4 py-1 bg-[#00D4FF] text-black rounded-lg shadow-md hover:bg-[#00AACC] transition"
+              >
+                <span className="pr-1">Resume</span>  
+                <Download size={22}/>
+              </Link>
+
             </div>
           </div>
         </div>

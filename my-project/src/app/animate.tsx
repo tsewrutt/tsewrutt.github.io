@@ -25,9 +25,9 @@ export const TypewriterAnimation = ({ text }) => {
 
 export const StarryBackground = () => {
   return (
-    <div className="absolute top-0 left-0 w-full h-[1000px] z-0 overflow-hidden pointer-events-none">
+    <div className="absolute top-20 left-0 w-full h-[900px] z-0 overflow-hidden pointer-events-none">
       {/* Arc Shape */}
-      <div className="w-full h-full bg-gradient-to-b from-[#1f1f1f] to-transparent rounded-b-full" />
+      <div className="w-full h-full bg-gradient-to-t from-[#000000] to-transparent rounded-b-full" />
 
       {/* Animated Stars */}
       {[...Array(200)].map((_, i) => {

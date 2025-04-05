@@ -56,7 +56,7 @@ export const projects: Project[] = [
   {
     id: 6,
     title: "Earth Defense",
-    desc: "Tower defense type game where Earth is being destroyed by human activities such as wildfires, pollution, overfishing, oil spillage & mining. You are given the task of saving Earth as a guardian angel \nWill you take the job or not?",
+    desc: "Tower defense type game where Earth is being destroyed by human activities such as wildfires, pollution, overfishing, oil spillage & mining. You are given the task of saving Earth as a guardian angel. \nWill you take the job or not?",
     skill:
       "unity, thematic storytelling, player decision-making, strategy, resource management, interactive narrative, dynamic game states",
     img: "/pictures/earth.png",
