@@ -23,6 +23,47 @@ export const TypewriterAnimation = ({ text }) => {
   );
 };
 
+export const StarryBackground = () => {
+  return (
+    <div className="absolute top-0 left-0 w-full h-[1000px] z-0 overflow-hidden pointer-events-none">
+      {/* Arc Shape */}
+      <div className="w-full h-full bg-gradient-to-b from-[#1f1f1f] to-transparent rounded-b-full" />
+
+      {/* Animated Stars */}
+      {[...Array(200)].map((_, i) => {
+        const size = Math.random() * 3 + 1;
+        const duration = Math.random() * 10 + 5; // 5s to 15s
+        // const delay = Math.random() * 2; // staggered
+        const xMove = Math.random() * 20 - 10; // -10 to 10 px
+        const yMove = Math.random() * 20 - 10;
+
+        return (
+          <motion.span
+            key={i}
+            className="absolute bg-white rounded-full opacity-80"
+            style={{
+              width: `${size}px`,
+              height: `${size}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            initial={{ opacity: 0, x: xMove, y: yMove }}
+            animate={{ opacity: [0.5, 1, 0.5], x: [xMove, -xMove, xMove], y: [yMove, -yMove, yMove] }}
+            transition={{
+              duration: duration,
+              // delay: delay,
+              repeat: Infinity,
+              repeatType: 'loop',
+              ease: "easeInOut"
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+
 // Animation for Button
 export const ButtonAnimation = () => {
   return (

@@ -25,7 +25,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
                     src={selectedProject.img}
                     alt={selectedProject.title}
                     fill
-                    className="object-cover rounded"
+                    className="object-scale-down rounded"
                 />
                 </div>
                 <div className="flex-row min-w-0">

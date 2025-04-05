@@ -29,7 +29,8 @@ const Projects = () => {
               <Image
                 src = {project.img}
                 alt = {project.title}
-                fill
+                width={800}
+                height={500}
                 className="object-cover"
                 // sizes="(max-width: 768px) 100vw, 33vw"
               />

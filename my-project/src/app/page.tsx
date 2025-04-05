@@ -1,6 +1,5 @@
 "use client"
-import { TypewriterAnimation } from "./animate"
-// import Projects from "./projects"; // Import the Projects component
+import { TypewriterAnimation, StarryBackground } from "./animate"
 import Link from "next/link";
 import Image from 'next/image'
 
@@ -9,8 +8,10 @@ const App = () => {
     <div className="min-h-screen bg-black text-white font-sans">
 
           <div className="flex flex-col items-center bg-[#121212] min-h-screen text-white">
+          
+          <StarryBackground/>
           {/* Cover Banner */}
-            <div className="relative w-full h-60 bg-[#1E1E1E]">
+            <div className="relative w-full h-75 bg-[#1E1E1E] z-1">
               {/* Fixing LCP issue by using Next.js Image */}
               <Image 
                 src="/pictures/banner.jpeg" 
@@ -32,7 +33,7 @@ const App = () => {
           </div>
       
           {/* Profile Content Box */}
-          <div className="mt-16 p-6 bg-[#1E1E1E] shadow-lg rounded-lg w-3/4 max-w-lg text-center border border-[#00D4FF]/40">
+          <div className="mt-16 p-6 bg-[#1E1E1E] shadow-lg rounded-lg w-3/4 max-w-lg text-center border border-[#00D4FF]/40 z-10">
             <TypewriterAnimation text="Hello, I'm the guy who made this website" />
             <p className="mt-2 text-gray-400">A passionate developer creating amazing web experiences.</p>
             <p className="mt-2 text-gray-400">
