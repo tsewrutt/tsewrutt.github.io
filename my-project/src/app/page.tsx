@@ -10,14 +10,25 @@ const App = () => {
 
           <div className="flex flex-col items-center bg-[#121212] min-h-screen text-white">
           {/* Cover Banner */}
-          <div className="relative w-full h-60 bg-[#1E1E1E]">
+            <div className="relative w-full h-60 bg-[#1E1E1E]">
+              {/* Fixing LCP issue by using Next.js Image */}
+              <Image 
+                src="/pictures/banner.jpeg" 
+                alt="Banner"
+                fill // Replaces layout="fill"
+                className="object-cover opacity-60" // Replaces objectFit="cover"
+                priority // Ensures this image loads first
+              />
 
-            {/* Have to fix immage LCP problem and use next images */}
-            <img src="/pictures/aurora2.jpeg" alt="Banner" className="w-full h-full object-cover opacity-60"/>
-            {/* Profile Picture (Overlapping the Banner) */}
-            <div className="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-[#00D4FF] bg-[#232323] rounded-full shadow-lg">
-              <img src="/pictures/aurora1edit.jpg" alt="Profile" className="w-full h-full rounded-full"/>
-            </div>
+              {/* Profile Picture (Overlapping the Banner) */}
+              <div className="absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-[#00D4FF] bg-[#232323] rounded-full overflow-hidden shadow-lg">
+                <Image 
+                  src="/pictures/profile.jpeg" 
+                  alt="Profile"
+                  fill
+                  className="object-cover"
+                />
+              </div>
           </div>
       
           {/* Profile Content Box */}

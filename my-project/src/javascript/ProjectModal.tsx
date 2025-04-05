@@ -11,15 +11,23 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
     if (!selectedProject) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-sm p-4">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-screen-lg
                             flex flex-col sm:flex-row md:flex-row gap-4">
                 {/* Image */}
-                <img
+                {/* <img
                     src={selectedProject.img}
                     alt={selectedProject.title}
                     className="flex-1 sm:w-[250px] md:w-[300px] h-[200px] object-cover rounded"
+                /> */}
+                <div className="relative sm:w-[250px] md:w-[500px] h-[250px]">
+                <Image
+                    src={selectedProject.img}
+                    alt={selectedProject.title}
+                    fill
+                    className="object-cover rounded"
                 />
+                </div>
                 <div className="flex-row min-w-0">
                     <h3 className="text-xl font-bold text-white sm:text-sm md:text-2xl">
                         {selectedProject.title}
