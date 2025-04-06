@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "Dance XR",
     desc: "Dance XR allows users to capture, edit, and sequence dance moves using intuitive mixed-reality controls. Worked with an AI model to create a markerless motion capture system. ",
     skill:
-      "mixed reality, unity c#, inverse kinematic, animation rigging, motion capture, spatial computing, pose-estimation",
+      "mixed reality, unity c#, hololens, quest 3, inverse kinematic, animation rigging, motion capture, spatial computing, pose-estimation",
     img: "/pictures/dxr.jpg",
     date: "2024-Present",
   },
