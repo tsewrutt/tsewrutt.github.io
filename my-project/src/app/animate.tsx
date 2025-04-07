@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const TypewriterAnimation = ({ text }) => {
   const letters = text.split(""); //split up letters from txt
   return (
-    <h3 className="text-4xl font-bold" style={{fontFamily: "'VT323', monospace"}}>
+    <h3 className="text font-bold" style={{fontFamily: "'VT323', monospace"}}>
       {letters.map((letter, index) => (
         <motion.span 
         key={index}

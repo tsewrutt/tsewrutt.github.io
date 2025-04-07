@@ -37,7 +37,7 @@ const App = () => {
             <TypewriterAnimation text="Hello, I'm the guy who made this website" />
             <p className="mt-2 text-gray-400">A passionate developer creating amazing web experiences.</p>
             <p className="mt-2 text-gray-400">
-              👋 Hi, I&apos;m Toushal Sewruttun! I&apos;m a Research Lead Developer specializing in markerless motion capture, mixed reality, and AI-driven human tracking. My work focuses on building seamless integrations between Unity, Python, and real-time computer vision systems.
+              👋 Hi, I&apos;m Toushal Sewruttun! I&apos;m a Research Lead Developer specializing in markerless motion capture, mixed reality, and AI-driven human tracking. My work focuses on building seamless integrations of platforms, mixed reality , real-time computer vision systems and many more.
             </p>
       
             {/* Social Links */}
