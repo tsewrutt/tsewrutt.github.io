@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="mx-auto space-x-6">
             <Link href="/" className="hover:text-[var(--accent-hover)] transition">Home</Link>
             <Link href="/projects" className="hover:text-[var(--accent-hover)] transition">Projects</Link>
-            <Link href="/themes" className="hover:text-[var(--accent-hover)] transition">Misc</Link>
+            {/* <Link href="/themes" className="hover:text-[var(--accent-hover)] transition">Misc</Link> */}
           </div>
         </nav>
 
