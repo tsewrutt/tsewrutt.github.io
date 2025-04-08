@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { projects, Project } from "../../data/projects"; // Import the project data
-import ProjectModal from "../../javascript/ProjectModal"; // Import the modal component
+import ProjectModal from "../ProjectModal"; // Import the modal component
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import { StarryBackground } from "../animate"
 import Image from 'next/image'
 
-const Projects = () => {
+
+export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentPage, setCurrentPage] = useState(1); // Page number state
   const projectsPerPage = 6; // Number of projects per page
@@ -19,6 +20,14 @@ const Projects = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
+  // Implement blocked scrolled when modal is on
+  // useEffect(() => {
+  //     document.body.style.overflow = "hidden";
+  //     return () => {
+  //       document.body.style.overflow = "auto";
+  //     };
+  //   }, []);
 
   const idxOfLastProject = currentPage * projectsPerPage;
   const idxOfFirstProject = idxOfLastProject - projectsPerPage;
@@ -101,5 +110,3 @@ const Projects = () => {
     </div>
   );
 };
-
-export default Projects;

@@ -11,6 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        card: "var(--card)",
+        muted: "var(--text-muted)",
+        accent: "var(--accent)",
+        accentHover: "var(--accent-hover)",
+        borderColor: "var(--border-color)",
       },
     },
   },
