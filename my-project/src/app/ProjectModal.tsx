@@ -13,7 +13,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
 
     return (
         <div className="fixed inset-0 flex items-center z-[60] justify-center backdrop-blur-sm p-4 transition-transform duration-500 ease-in-out"onClick={onClose} >
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-screen-lg
+            <div className="bg-[var(--card)] p-6 rounded-lg shadow-lg max-w-screen-lg
                             flex flex-col sm:flex-row md:flex-row gap-4 relative border border-[var(--border-color)]">
 
                 <div className="relative sm:w-[250px] md:w-[500px] h-[250px] lg:w-300">
