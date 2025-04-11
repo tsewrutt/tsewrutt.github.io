@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export const TypewriterAnimation = ({ text }) => {
   const letters = text.split(""); //split up letters from txt
   return (
-    <h3 className="text font-bold" style={{fontFamily: "'VT323', monospace"}}>
+    <h3 className="text-[var(--text-color)] font-bold" style={{fontFamily: "'VT323', monospace"}}>
       {letters.map((letter, index) => (
         <motion.span 
         key={index}
@@ -25,22 +25,18 @@ export const TypewriterAnimation = ({ text }) => {
 
 export const StarryBackground = () => {
   return (
-    <div className="absolute top-20 left-0 w-full h-[900px] z-0 overflow-hidden pointer-events-none">
-      {/* Arc Shape */}
-      <div className="w-full h-full bg-gradient-to-t from-[#000000] to-transparent rounded-b-full" />
+    <div className="absolute top-20 left-0 w-full h-[100%] z-0 overflow-hidden pointer-events-none">
 
-      {/* Animated Stars */}
       {[...Array(200)].map((_, i) => {
         const size = Math.random() * 3 + 1;
-        const duration = Math.random() * 10 + 5; // 5s to 15s
-        // const delay = Math.random() * 2; // staggered
-        const xMove = Math.random() * 20 - 10; // -10 to 10 px
+        const duration = Math.random() * 10 + 5;
+        const xMove = Math.random() * 20 - 10;
         const yMove = Math.random() * 20 - 10;
 
         return (
           <motion.span
             key={i}
-            className="absolute bg-white rounded-full opacity-80"
+            className="absolute bg-[var(--star-color)] rounded-full opacity-80"
             style={{
               width: `${size}px`,
               height: `${size}px`,
@@ -51,10 +47,9 @@ export const StarryBackground = () => {
             animate={{ opacity: [0.5, 1, 0.5], x: [xMove, -xMove, xMove], y: [yMove, -yMove, yMove] }}
             transition={{
               duration: duration,
-              // delay: delay,
               repeat: Infinity,
-              repeatType: 'loop',
-              ease: "easeInOut"
+              repeatType: "loop",
+              ease: "easeInOut",
             }}
           />
         );

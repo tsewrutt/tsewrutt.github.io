@@ -46,20 +46,21 @@ export default function Projects() {
     };
 
   return (
-    <div className="relative min-h-screen bg-gray-900 text-white p-6 pt-16">
+    // bg-[var(--background)] = page bckgrd
+    <div className="relative min-h-screen bg-[var(--background)] text-white p-6 pt-16">
       <StarryBackground/>
       <div>
-        <h2 className="text-3xl font-bold text-white text-center mb-6">Projects</h2>
+        <h2 className="text-xl font-bold text-[var(--text-color)] text-center mb-6">Projects</h2>
       </div>
       {/* Project List */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-500 ease-in-out ">
         {currentProjects.map((project) => (
           <div
             key={project.id}
-            className="bg-gray-800 pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-gray-700 transition-transform duration-500 ease-in-out transform hover:scale-105 border border-[var(--border-color)]"
+            className="bg-[var(--card)] pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-[var(--card-hover)] transition-transform duration-500 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)]"
             onClick={() => setSelectedProject(project)}
           >
-            <h3 className="text-xl font-semibold pb-2">{project.title}</h3>
+            <h3 className="text-xl text-[var(--text-color)] font-semibold pb-2">{project.title}</h3>
             <div className="relative w-full h-48 mb-2 rounded overflow-hidden ">
               <Image
                 src = {project.img}
@@ -69,11 +70,11 @@ export default function Projects() {
                 className="object-cover"
               />
             </div>
-            <div className="text-gray-500 text-sm flex flex-wrap gap-2 mt-2">
+            <div className="text-[var(--text-color)] text-sm flex flex-wrap gap-2 mt-2">
               {project.skill.split(",").map((keyword, index) => (
                 <span
                   key={index}
-                  className="bg-black text-white px-2 py-1 border border-[var(--border-color)] rounded-full text-xs whitespace-nowrap"
+                  className="bg-[var(--card-bubbles)] text-[var(--text-color)] px-2 py-1 border border-[var(--border-color)] rounded-full text-xs whitespace-nowrap"
                 >
                   {keyword.trim()}
                 </span>
@@ -89,7 +90,7 @@ export default function Projects() {
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1} // Disable if we're on the first page
-          className={`px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`px-6 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition duration-300 transform hover:scale-105 ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}`}
         >
           <CircleChevronLeft/>
         </button>
@@ -98,7 +99,7 @@ export default function Projects() {
         {idxOfLastProject < projects.length && (
           <button
             onClick={handleNextPage}
-            className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition duration-300 transform hover:scale-105"
+            className="px-6 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition duration-300 transform hover:scale-105"
           >
             <CircleChevronRight/>
           </button>

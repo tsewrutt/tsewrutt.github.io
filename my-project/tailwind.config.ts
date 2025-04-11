@@ -9,13 +9,20 @@ export default {
   theme: {
     extend: {
       colors: {
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
+        // card: "var(--card)",
+        // muted: "var(--text-muted)",
+        // accent: "var(--accent)",
+        // accentHover: "var(--accent-hover)",
+        // borderColor: "var(--border-color)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         card: "var(--card)",
-        muted: "var(--text-muted)",
         accent: "var(--accent)",
-        accentHover: "var(--accent-hover)",
-        borderColor: "var(--border-color)",
+        "accent-hover": "var(--accent-hover)",
+        "text-muted": "var(--text-muted)",
+        "border-color": "var(--border-color)",
       },
     },
   },

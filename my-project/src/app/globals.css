@@ -1,45 +1,49 @@
 @import 'tailwindcss';
 
+/* Optional: Initial theme using system preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --card: #1E1E1E;
-    --text-muted: #aaa;
-    --accent: #00D4FF;
-    --accent-hover: #00AACC;
-    --border-color: #00D4FF66;
+    color-scheme: dark;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
   }
 }
 
-/* Dark theme overrides */
+/* ✅ Theme Variables OUTSIDE the media query */
 .dark {
+  --background-gradient: linear-gradient(to top, #000000, transparent);
   --background: #000000;
   --foreground: #ffffff;
+  --star-color: #ffffff;
   --card: #1E1E1E;
-  --text-muted: #aaa;
+  --card-hover: #374151;
+  --card-bubbles:#37415166;
+  --text-color: #ffffff;
   --accent: #00D4FF;
   --accent-hover: #00AACC;
   --border-color: #00D4FF66;
 }
 
-/* 
-Need some work to get things right Remeber sometimes 
-Transparent or empty background is also cool
-*/
 .light {
-  --background: #f9f9f9;
-  --foreground: #111111;
-  --card: #ffffff;
-  --text-muted: #666666;
+  --background-gradient: linear-gradient(to top, #ffffff, transparent);
+  --background: #ffffff;/*##4d4d4d */
+  --foreground: #000000;
+  --star-color: #000000;
+  --card: #6b6b6b;
+  --card-hover: #8e8a8a;
+  --text-color: rgb(0, 0, 0);
   --accent: #007ACC;
-  --accent-hover: #005F99;
+  --accent-hover: #ffffff;
   --border-color: #e0e0e0;
 }
 
+/* Global styles */
 body {
   color: var(--foreground);
   background: var(--background);
-  /* transition: var(--background) 0.3s ease, color 0.3s ease; */
   font-family: Arial, Helvetica, sans-serif;
+  /* transition: background 0.3s ease, color 0.3s ease; */
 }

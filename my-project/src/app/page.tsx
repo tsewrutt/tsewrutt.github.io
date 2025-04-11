@@ -6,12 +6,13 @@ import Image from 'next/image'
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans">
-      <div className="flex flex-col items-center bg-[var(--background)] min-h-screen text-[var(--foreground)]">
+    <div className="min-h-screen font-sans">
+      
+      <div className="flex flex-col items-center min-h-screen">
         <StarryBackground />
         
         {/* Cover Banner */}
-        <div className="relative w-full h-85 bg-[var(--background)] z-1">
+        <div className="relative w-full h-85  z-1">
           <Image 
             src="/pictures/banner.jpeg" 
             alt="Banner"
@@ -21,7 +22,7 @@ const App = () => {
           />
 
           {/* Profile Picture (Overlapping the Banner) */}
-          <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-[var(--accent)] bg-[#232323] rounded-full overflow-hidden shadow-lg">
+          <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-32 h-32 border-2 border-[var(--accent)] rounded-full overflow-hidden shadow-lg">
             <Image 
               src="/pictures/profile.jpeg" 
               alt="Profile"
@@ -31,14 +32,15 @@ const App = () => {
           </div>
         </div>
 
+
         {/* Profile Content Box */}
         <div className="mt-10 p-6 bg-[var(--card)] shadow-lg rounded-lg w-3/4 max-w-lg text-center border border-[var(--border-color)] z-10">
           <TypewriterAnimation text="Hello, I'm the guy who made this website" />
-          <p className="mt-2 text-[var(--text-muted)]">
-            A passionate developer creating amazing web experiences.
+          <p className="mt-2 text-[var(--text-color)]">
+            A passionate developer building cool things as he goes.
           </p>
-          <p className="mt-2 text-[var(--text-muted)]">
-            👋 Hi, I&apos;m Toushal Sewruttun! I&apos;m a Research Lead Developer specializing in markerless motion capture, mixed reality, and AI-driven human tracking. My work focuses on building seamless integrations of platforms, mixed reality, real-time computer vision systems and many more.
+          <p className="mt-2 text-[var(--text-color)]">
+            👋 Hi, I&apos;m Toushal Sewruttun! I&apos;m a Research Developer in the HCI Lab at the University of New Brunswick. My work focuses on building seamless integrations of platforms, mixed reality, real-time computer vision systems and many more.
           </p>
 
           {/* Social Links */}

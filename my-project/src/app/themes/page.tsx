@@ -1,20 +1,28 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 
 export default function ThemePage() {
   const [isDark, setIsDark] = useState(false);
 
-  // Check for user's preferred theme on load
+  // On mount: apply system theme
   useEffect(() => {
-    const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(darkMode);
-    document.documentElement.classList.toggle("dark", darkMode);
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDark(prefersDark);
+    document.documentElement.classList.add(prefersDark ? "dark" : "light");
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark", !isDark);
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+
+    if (newIsDark) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
   };
 
   return (
@@ -44,4 +52,4 @@ export default function ThemePage() {
       </div>
     </main>
   );
-};
+}
