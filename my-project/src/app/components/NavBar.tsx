@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { SlideUp } from "../animate"; 
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -13,7 +14,8 @@ const navLinks = [
 ];
 
 export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
   return (
     <>
@@ -27,11 +29,14 @@ export default function NavBar() {
         <div className="hidden sm:flex space-x-6 text-sm sm:text-base">
           {navLinks.map((link) => (
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-[var(--foreground)] hover:text-[var(--accent-hover)] transition"
-            >
-              {link.name}
+                key={link.name}
+                href={link.href}
+                className={`transition ${
+                pathname === link.href
+                    ? "text-[var(--accent-hover)] font-semibold"
+                    : "text-[var(--foreground)] hover:text-[var(--accent-hover)]"
+                }`}            >
+                {link.name}
             </Link>
           ))}
         </div>
@@ -48,29 +53,36 @@ export default function NavBar() {
 
       {/* Mobile Fullscreen Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 backdrop-blur-md flex flex-col items-center justify-center space-y-4 text-xl text-[var(--foreground)]">
-          {/* Close Button */}
-          <button
+        <SlideUp
+            keyProp="mobile-nav"
+            className="fixed inset-0 z-50 backdrop-blur-md flex flex-col items-center justify-center space-y-4 text-xl text-[var(--foreground)]"
+        >
+            {/* Close Button */}
+            <button
             className="absolute top-4 right-4"
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close Menu"
-          >
-            <X size={28} />
-          </button>
-
-          {/* Menu Items */}
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="hover:text-[var(--accent-hover)] transition"
-              onClick={() => setIsMenuOpen(false)}
             >
-              {link.name}
+            <X size={28} />
+            </button>
+
+            {/* Animated Menu Items */}
+            {navLinks.map((link) => (
+            <Link
+                key={link.name}
+                href={link.href}
+                className={`transition ${
+                pathname === link.href
+                    ? "text-[var(--accent-hover)] font-semibold"
+                    : "text-[var(--foreground)] hover:text-[var(--accent-hover)]"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+                >
+                {link.name}
             </Link>
           ))}
-        </div>
-      )}
+        </SlideUp>
+        )}
     </>
   );
 }

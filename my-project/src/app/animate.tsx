@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 //Taking text as input from page
 export const TypewriterAnimation = ({ text }) => {
@@ -87,15 +87,29 @@ export const ImageAnimation = () => {
   );
 };
 
-export const SlideUp = ({ children, delay = 0 }) => {
+export const SlideUp = ({
+  children,
+  delay = 0,
+  keyProp,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  keyProp?: string | number;
+  className?: string;
+}) => {
   return (
-    <motion.div
-      initial={{ y: "10%", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: "10%", opacity: 0 }}
-      transition={{ duration: 0.1, ease: "easeOut", delay }}
-    >
-      {children}
-    </motion.div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={keyProp}
+        initial={{ y: 40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 40, opacity: 0 }}
+        transition={{ duration: 0.1, ease: "easeInOut", delay }}
+        className={className}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };

@@ -55,18 +55,19 @@ export default function Projects() {
       {/* Project List */}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-500 ease-in-out ">
-        {currentProjects.map((project) => (
-
-          <div
-            key={project.id}
-            className="bg-[var(--card)] pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-[var(--card-hover)] transition-transform duration-500 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)]"
-            onClick={() => setSelectedProject(project)}
-          >
+      {currentProjects.map((project, index) => (
+        <SlideUp
+          key={project.id}
+          keyProp={project.id}
+          delay={index * 0.05 }
+          className="bg-[var(--card)] pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-[var(--card-hover)] transition-transform duration-500 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)]"
+        >
+          <div onClick={() => setSelectedProject(project)}>
             <h3 className="text-xl text-[var(--text-color)] font-semibold pb-2">{project.title}</h3>
             <div className="relative w-full h-48 mb-2 rounded overflow-hidden ">
               <Image
-                src = {project.img}
-                alt = {project.title}
+                src={project.img}
+                alt={project.title}
                 width={800}
                 height={500}
                 className="object-cover"
@@ -83,8 +84,9 @@ export default function Projects() {
               ))}
             </div>
           </div>
-        ))}
-      </div>
+        </SlideUp>
+      ))}
+    </div>
 
       {/* Pagination Buttons */}
       <div className="flex justify-between mt-6">
