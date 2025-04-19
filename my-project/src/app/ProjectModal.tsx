@@ -2,6 +2,7 @@ import React from "react";
 import { Project } from "../data/projects";
 import Image from 'next/image'
 import { X } from 'lucide-react';
+import { SlideUp } from "./animate"; 
 
 interface ProjectModalProps {
     selectedProject: Project | null;
@@ -12,19 +13,23 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
     if (!selectedProject) return null;
 
     return (
+        
         <div className="fixed inset-0 flex items-center z-[60] justify-center backdrop-blur-sm p-4 transition-transform duration-500 ease-in-out"onClick={onClose} >
+        <SlideUp>
             <div className="bg-[var(--card)] p-6 rounded-lg shadow-lg max-w-screen-lg
                             flex flex-col sm:flex-row md:flex-row gap-4 relative border border-[var(--border-color)]">
 
+                
                 <div className="relative sm:w-[250px] md:w-[500px] h-[250px] lg:w-300">
-                <Image
-                    src={selectedProject.img}
-                    alt={selectedProject.title}
-                    fill
-                    className="object-cover rounded"
-                />
+                    <Image
+                        src={selectedProject.img}
+                        alt={selectedProject.title}
+                        fill
+                        className="object-cover rounded"
+                    />
 
                 </div>
+
                 <div className="flex-row min-w-0">
                     <h3 className="text-xl font-bold text-[var(--text-color)] sm:text-sm md:text-2xl">
                         {selectedProject.title}
@@ -44,8 +49,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
                         <X/>
                     </button>
                 </div>
+
                 
             </div>
+        </SlideUp>
         </div>
 
 

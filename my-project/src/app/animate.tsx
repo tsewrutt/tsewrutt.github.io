@@ -86,3 +86,16 @@ export const ImageAnimation = () => {
     />
   );
 };
+
+export const SlideUp = ({ children, delay = 0 }) => {
+  return (
+    <motion.div
+      initial={{ y: "10%", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: "10%", opacity: 0 }}
+      transition={{ duration: 0.1, ease: "easeOut", delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};

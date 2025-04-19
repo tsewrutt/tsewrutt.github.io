@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { projects, Project } from "../../data/projects"; // Import the project data
 import ProjectModal from "../ProjectModal"; // Import the modal component
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
-import { StarryBackground } from "../animate"
+import { SlideUp, StarryBackground } from "../animate"
 import Image from 'next/image'
 
 
@@ -53,8 +53,10 @@ export default function Projects() {
         <h2 className="text-xl font-bold text-[var(--text-color)] text-center mb-6">Projects</h2>
       </div>
       {/* Project List */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 transition-all duration-500 ease-in-out ">
         {currentProjects.map((project) => (
+
           <div
             key={project.id}
             className="bg-[var(--card)] pt-2 pl-4 pr-4 pb-4 rounded-lg cursor-pointer hover:bg-[var(--card-hover)] transition-transform duration-500 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)]"
@@ -84,7 +86,6 @@ export default function Projects() {
         ))}
       </div>
 
-
       {/* Pagination Buttons */}
       <div className="flex justify-between mt-6">
         <button
@@ -107,6 +108,7 @@ export default function Projects() {
       </div>
 
       {/* Modal */}
+
       <ProjectModal selectedProject={selectedProject} onClose={handleCloseModal} />
     </div>
   );
