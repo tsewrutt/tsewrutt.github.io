@@ -36,15 +36,15 @@ const App = () => {
           
           {/* Typewriter Headline */}
           <div className="text-lg sm:text-xl md:text-2xl lg:text-8 font-semibold text-[var(--accent)]">
-            <TypewriterAnimation text="Hello, I'm the guy who made this website" />
+            <TypewriterAnimation text="Hi there! You've found my little corner of the Internet." />
           </div>
 
           {/* Description */}
           <p className="mt-5 text-sm sm:text-base md:text-lg lg:text-6 text-[var(--text-color)] leading-relaxed">
-            A passionate developer building cool things as he goes.
+            A passionate developer building cool things as he goes...
           </p>
           <p className="mt-3 text-sm sm:text-base md:text-lg lg:text--6 text-[var(--text-color)] leading-relaxed">
-            👋 Hi, I&apos;m Toushal Sewruttun! I&apos;m a Research Developer in the HCI Lab at the University of New Brunswick. My work focuses on building seamless integrations of platforms, mixed reality, real-time computer vision systems and many more.
+            👋 Hi, I&apos;m Toushal Sewruttun! I work on everything from interactive frontends to real-time computer vision systems, and I love building things that connect the digital and physical worlds. I&apos;m also passionate about meeting people from different cultures and backgrounds, and I enjoy learning from different perspectives. Glad you&apos;re here, Take a look around!
           </p>
 
           {/* Social Links */}
