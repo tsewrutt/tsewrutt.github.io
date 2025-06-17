@@ -21,14 +21,6 @@ export default function Projects() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
-  // Implement blocked scrolled when modal is on
-  // useEffect(() => {
-  //     document.body.style.overflow = "hidden";
-  //     return () => {
-  //       document.body.style.overflow = "auto";
-  //     };
-  //   }, []);
-
   const idxOfLastProject = currentPage * projectsPerPage;
   const idxOfFirstProject = idxOfLastProject - projectsPerPage;
 

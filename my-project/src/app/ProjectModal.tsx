@@ -10,7 +10,9 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose }) => {
-        useEffect(() => {
+    // Effect to handle body overflow when modal is open
+    // This effect adds a class to the body to prevent scrolling when the modal is open    
+    useEffect(() => {
         if (selectedProject) {
             document.body.classList.add('overflow-hidden');
         } else {
