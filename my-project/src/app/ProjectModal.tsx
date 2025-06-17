@@ -50,12 +50,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
                         {selectedProject.desc}
                     </p> */}
                     {/* Scrollable description */}
-                    <div className="text-[var(--text-color)] text-sm sm:text-base md:text-sm mt-2 max-h-40 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 pr-2">
-                        <p className="whitespace-pre-wrap">
-                            {selectedProject.desc}
-                        </p>
+                    <div className="rounded-lg overflow-hidden border border-[var(--border-color)]">
+                        <div className="text-[var(--text-color)] text-sm sm:text-base md:text-sm mt-2 max-h-50 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 pl-1 ">
+                            <p className="whitespace-pre-wrap">
+                                {selectedProject.desc}
+                            </p>
+                        </div>
                     </div>
-                    <p className="text-[var(--text-color)] pt-4 text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-screen-lg">
+
+                    <p className="text-[var(--text-color)] pt-1 text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-screen-lg">
                         <strong>Skills:</strong> {selectedProject.skill}
                     </p>
                     <button
