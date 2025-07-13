@@ -22,7 +22,6 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Dance XR",
-    //desc: "Dance XR allows users to capture, edit, and sequence dance moves using intuitive mixed-reality controls. Worked with an AI model to create a markerless motion capture system. ",
     desc: "💃 Worked on Dance XR, a cutting-edge mixed reality platform enabling dancers to capture, edit, and sequence choreography through spatial computing, without the need for markers or suits.\n\n🎯 **Contribution:**\n• Implemented markerless motion capture using an AI-based pose estimation model\n• Applied real-time skeletal rigging using Unity’s Animation Rigging & IK system\n• Developed a robust communication layer between the Unity client and the model server for continuous data streaming\n• Designed and implemented back-end architecture to support markerless tracking and perform complex calculations for real-world position estimation\n\n**Core Features:**\n• A markerless motion capture powered by Kinect initially\n• Real-time skeletal rig application using Unity’s Animation Rigging & IK\n• Hands-free editing tools via gesture and voice inputs\n• Timeline-based sequencer to blend and loop recorded moves\n• HoloLens 2 support\n\n🛠️ **Tech Stack & Implementation:**\n• Built in Unity (C#) \n• AI model trained for real-time body tracking from RGB input \n• Performance-optimized for complex motion handling\n\n🧪 **Testing & Workflow:**\n• Play Mode tests for interaction flows and scene persistence\n• Recorded and reviewed motion sessions to validate rig fidelity\n• Worked closely with dancers, testing and adjusting features based on their feedback to improve the experience\n\n💡 **Impact:**\nDance XR empowers choreographers and performers by turning creative ideas into movement, allowing them to bring their visions to life in immersive space.\n\n🔗(To add embedded link to walkthrough here.)",
     skill:
       "mixed reality, unity c#, hololens, quest 3, inverse kinematic, animation rigging, motion capture, spatial computing, pose-estimation",
@@ -73,7 +72,7 @@ export const projects: Project[] = [
   {
     id: 7,
     title: "SoundSky Streaming Service",
-    desc: "Developed a music streaming SPA using the MVVM model with HTML, Vue.js, and SQL. Implemented CRUD operations and integrated REST API for seamless data communication between the web page and the backend.",
+    desc: "🌐 Designed and developed a modern single-page music streaming web application using the MVVM architectural pattern with Vue.js, HTML, and SQL.\n\n🛠️ **Core Features & Architecture:**\n• Built with RESTful API integration for seamless frontend–backend communication\n• Implemented full CRUD operations for dynamic user interaction with playlists and tracks\n\n💻 **Tech Stack:**\n• Vue.js for dynamic rendering and state management\n• SQL for user storage and efficient query handling\n• Employed clean MVVM separation for scalability and maintainability\n\n💡 **Impact:**\nCreated with usability and scalability in mind, SoundSky delivers a polished interface and intuitive controls, making music discovery and playlist management enjoyable for users.(...and yes, it is a replica of soundcloud)\n\n🔗 (To add link to demo or GitHub)",
     skill:
       "spa, mvvm, vue.js, rest api, database management, client-server model, sql",
     img: "/pictures/sound.png",
@@ -83,7 +82,7 @@ export const projects: Project[] = [
   {
     id: 8,
     title: "Virtual Piano",
-    desc: "Implemented a JavaFX piano application using MVC architecture, enabling users to play using keyboard or mouse input. Included a theme selection menu for choosing seasonal themes.",
+    desc: "🎼 Developed a fully interactive piano application using JavaFX, enabling users to play notes via keyboard or mouse with real-time visual and audio feedback.\n\n🖱️ **Interaction & UI Design:**\n• Built with MVC architecture for a clean separation of logic and UI layers\n• Theme selector allows users to switch between seasonal visual styles\n• Responsive layout and input handling for fluid playability\n\n🛠️ **Core Technical Highlights:**\n• Event handling for both key and click-based input\n• Designed a customizable interface for enhanced accessibility and aesthetic flexibility\n\n💡 🔗 (To add link to demo or GitHub)", ///We will add the link for demo here,as one extra part of the projects json
     skill:
       "java fx, mvc, event handling, graphical user interface, user interaction, customizable interface",
     img: "/pictures/piano.png",
@@ -93,7 +92,7 @@ export const projects: Project[] = [
   {
     id: 9,
     title: "Puzzle Box",
-    desc: "A 2D platformer using Unity. The inspiration for this project came from Geometry Dash. Development involved level designing with a top layer HUD which accomodated for resets, level selection, volume regulating. In this project, most of the sprites and animations were done by me. I had a lot of fun making this one.",
+    desc: "🚀 Created a fast-paced 2D platformer game in Unity, inspired by **Geometry Dash**, focusing on responsive gameplay and a fun time.\n\n🕹️ **Gameplay & Visuals:**\n• Designed multiple challenging levels with reset mechanics, dynamic volume control, and HUD-based feedback\n• Developed custom sprites and animations from scratch for a distinct visual identity\n• Level selector UI and in-game performance tuning tools included\n\n🛠️ **Core Systems & Tools:**\n• Unity 2D environment with tilemaps and layered collision systems\n• Integrated game loop logic for resets, scoring, and progress tracking\n• Implemented user-friendly menu navigation and options customization\n\n💡 **Impact:**\nA passion-driven project showcasing creativity in both art and development, PuzzleBox merges nostalgic platforming with modern design principles to create an addictively replayable experience. You can try to speed run it...if you dare?\n\n🔗 (To add link to game or GitHub)",
     skill:
       "Unity, 2D platformer, tile maps, custom sprites, game development, level design, geometry dash inspired",
     img: "/pictures/puzzle.png",

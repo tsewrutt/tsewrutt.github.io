@@ -64,7 +64,7 @@ const App = () => {
             </Link>
 
             <Link
-              href="personal/resume.pdf"
+              href="personal/Toushal_Sewruttun_Resume.pdf"
               download="Toushal_Sewruttun_Resume"
               className="flex items-center px-4 sm:px-5 py-2 text-sm sm:text-base md:text-lg bg-[var(--accent)] text-[var(--background)] rounded-lg shadow-md hover:bg-[var(--accent-hover)] transition"
             >
