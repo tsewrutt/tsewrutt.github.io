@@ -44,12 +44,12 @@ const App = () => {
             A passionate developer building cool things as he goes...
           </p>
           <p className="mt-3 text-sm sm:text-base md:text-lg lg:text--6 text-[var(--text-color)] leading-relaxed">
-            👋 Hi, I&apos;m Toushal! I work on everything from interactive frontends to real-time computer vision systems, and I love building things that connect the digital and physical worlds. I&apos;m also passionate about meeting people from different cultures and backgrounds, and I enjoy learning from different perspectives. Glad you&apos;re here, Take a look around!
+            👋 Hi, I&apos;m Toushal! I work on everything from interactive frontends to complex back-end algorithms, and I love building things that connect the digital and physical worlds. I&apos;m also passionate about meeting people from different cultures and backgrounds, and I enjoy learning from different perspectives. Glad you&apos;re here, Take a look around!
           </p>
 
           {/* Social Links */}
           <div className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base md:text-lg">
-            <a href="mailto:tsewrutt@unb.ca" className="text-[var(--accent)] hover:underline">Email</a>
+            <a href="mailto:toushal6@gmail.com" className="text-[var(--accent)] hover:underline">Email</a>
             <a href="https://www.linkedin.com/in/tsewrutt" className="text-[var(--accent)] hover:underline">LinkedIn</a>
             <a href="https://github.com/tsewrutt" className="text-[var(--accent)] hover:underline">GitHub</a>
           </div>

@@ -82,7 +82,7 @@ export const projects: Project[] = [
   {
     id: 8,
     title: "Virtual Piano",
-    desc: "🎼 Developed a fully interactive piano application using JavaFX, enabling users to play notes via keyboard or mouse with real-time visual and audio feedback.\n\n🖱️ **Interaction & UI Design:**\n• Built with MVC architecture for a clean separation of logic and UI layers\n• Theme selector allows users to switch between seasonal visual styles\n• Responsive layout and input handling for fluid playability\n\n🛠️ **Core Technical Highlights:**\n• Event handling for both key and click-based input\n• Designed a customizable interface for enhanced accessibility and aesthetic flexibility\n\n💡 🔗 (To add link to demo or GitHub)", ///We will add the link for demo here,as one extra part of the projects json
+    desc: "🎼 Developed a fully interactive piano application using JavaFX, enabling users to play notes via keyboard or mouse with real-time visual and audio feedback.\n\n🖱️ **Interaction & UI Design:**\n• Built with MVC architecture for a clean separation of logic and UI layers\n• Theme selector allows users to switch between seasonal visual styles\n• Responsive layout and input handling for fluid playability\n\n🛠️ **Core Technical Highlights:**\n• Event handling for both key and click-based input\n• Designed a customizable interface for enhanced accessibility and aesthetic flexibility\n\n🔗 (To add link to demo or GitHub)", ///We will add the link for demo here,as one extra part of the projects json
     skill:
       "java fx, mvc, event handling, graphical user interface, user interaction, customizable interface",
     img: "/pictures/piano.png",
