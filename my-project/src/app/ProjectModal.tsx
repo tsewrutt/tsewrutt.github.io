@@ -31,44 +31,49 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
         
         <div className="fixed inset-0 flex items-center z-[60] justify-center backdrop-blur-sm p-4 transition-transform duration-500 ease-in-out" onClick={onClose}>
         <SlideUp>
-            <div className="bg-[var(--card)] p-6 rounded-lg shadow-lg max-w-screen-lg
-                            flex flex-col sm:flex-row md:flex-row gap-4 relative border border-[var(--border-color)]"  onClick={(e) => e.stopPropagation() }>
-                
-                <div className="relative sm:w-[250px] md:w-[500px] h-[250px] lg:w-300">
+            <div
+                className="bg-[var(--card)] p-6 rounded-lg shadow-lg 
+                        sm:w-[500px] md:w-[650px] lg:w-[750px] 
+                        
+                        flex flex-col gap-4 relative border border-[var(--border-color)]"
+                onClick={(e) => e.stopPropagation()}
+            >
+                {/* Image at top */}
+                <div className="relative w-full h-[350px]">
                     <Image
                         src={selectedProject.img}
                         alt={selectedProject.title}
                         fill
                         className="object-cover rounded"
                     />
-
                 </div>
 
-                <div className="flex-row min-w-0">
-                    <h3 className="text-xl font-bold text-[var(--text-color)] sm:text-sm md:text-2xl">
+                {/* Text content below */}
+                <div className="flex flex-col flex-grow min-w-0">
+                    <h3 className="text-2xl font-bold text-[var(--text-color)]">
                         {selectedProject.title}
                     </h3>
-                    {/* <p className="text-[var(--text-color)] text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-300px whitespace-pre-wrap">
-                        {selectedProject.desc}
-                    </p> */}
+
                     {/* Scrollable description */}
-                    <div className="rounded-lg overflow-hidden border border-[var(--border-color)]">
-                        <div className="text-[var(--text-color)] text-sm sm:text-base md:text-sm mt-2 max-h-50 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 pl-1 ">
+                    <div className="rounded-lg overflow-hidden border border-[var(--border-color)] mt-2 flex-grow">
+                        <div className="text-[var(--text-color)] text-sm max-h-[200px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 p-2">
                             <p className="whitespace-pre-wrap">
                                 {selectedProject.desc}
                             </p>
                         </div>
                     </div>
 
-                    <p className="text-[var(--text-color)] pt-1 text-sm sm:text-base md:text-sm mt-2 text-wrap max-w-screen-lg">
+                    {/* Skills */}
+                    <p className="text-[var(--text-color)] pt-1 text-sm mt-2">
                         <strong>Skills:</strong> {selectedProject.skill}
                     </p>
+
+                    {/* Close button */}
                     <button
-                        className="absolute top-3 right-3 text-white rounded 
-                                hover:bg-gray-600 transition sm:w-[25px] md:w-[25px]"
+                        className="absolute top-3 right-3 text-white rounded hover:bg-gray-600 transition w-[25px] h-[25px] flex items-center justify-center"
                         onClick={onClose}
                     >
-                        <X/>
+                        <X />
                     </button>
                 </div>
             </div>
