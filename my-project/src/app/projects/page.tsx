@@ -15,6 +15,26 @@ export default function Projects() {
   const [filterSkill, setFilterSkill] = useState<string>('');
   const projectsPerPage = 6; // Number of projects per page
 
+  // Add new state to track hover image index
+const [hoveredImageIndex, setHoveredImageIndex] = useState<{[key: number]: number}>({});
+
+// Function to start hover slideshow
+const handleMouseEnter = (projectId: number, imagesCount: number) => {
+  if (imagesCount <= 1) return;
+
+  let index = 0;
+  const interval = setInterval(() => {
+    setHoveredImageIndex(prev => ({ ...prev, [projectId]: (index++) % imagesCount }));
+  }, 1000); // change every 1.5s
+
+  setHoveredImageIndex(prev => ({ ...prev, [`interval_${projectId}`]: interval }));
+};
+
+const handleMouseLeave = (projectId: number) => {
+  clearInterval(hoveredImageIndex[`interval_${projectId}`]);
+  setHoveredImageIndex(prev => ({ ...prev, [projectId]: 0 }));
+};
+
   // Get all unique skills for filtering
   const allSkills = Array.from(new Set(projects.flatMap(p => p.skill.split(',').map(s => s.trim()))));
 
@@ -136,15 +156,20 @@ export default function Projects() {
         >
           <div onClick={() => setSelectedProject(project)}>
             <h3 className="text-lg sm:text-xl text-[var(--text-color)] font-bold mb-2 sm:mb-3">{project.title}</h3>
-            <div className="relative w-full h-40 sm:h-52 mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-md">
-              <Image
-                src={project.img}
-                alt={project.title}
-                width={800}
-                height={500}
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <div
+                onMouseEnter={() => handleMouseEnter(project.id, project.img.length)}
+                onMouseLeave={() => handleMouseLeave(project.id)}
+                onClick={() => setSelectedProject(project)}
+                className="relative w-full h-40 sm:h-52 mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-md"
+              >
+                <Image
+                  src={project.img[hoveredImageIndex[project.id] || 0]}
+                  alt={project.title}
+                  width={800}
+                  height={500}
+                  className="object-cover w-full h-full"
+                />
+              </div>
             <div className="text-[var(--text-color)] text-sm flex flex-wrap gap-1 sm:gap-2">
               {project.skill.split(",").slice(0, 3).map((keyword, index) => (
                 <span

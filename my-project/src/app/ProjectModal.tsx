@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Project } from "../data/projects";
 import Image from 'next/image'
-import { X } from 'lucide-react';
+import { CircleChevronLeft, CircleChevronRight, X } from 'lucide-react';
 import { SlideUp } from "./animate"; 
 
 interface ProjectModalProps {
@@ -25,6 +25,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
         };
     }, [selectedProject]);
 
+    const [modalImageIndex, setModalImageIndex] = useState(0);
+
+    useEffect(() => {
+    setModalImageIndex(0); // reset to first image on modal open
+    }, [selectedProject]);
+
     if (!selectedProject) return null;
 
     return (
@@ -39,14 +45,31 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, onClose })
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Image at top */}
-                <div className="relative w-full h-[350px]">
+                <div className="relative w-full h-[350px] flex items-center justify-center">
                     <Image
-                        src={selectedProject.img}
+                        src={selectedProject.img[modalImageIndex]}
                         alt={selectedProject.title}
                         fill
                         className="object-cover rounded"
                     />
-                </div>
+                    
+                    {selectedProject.img.length > 1 && (
+                        <>
+                        <button
+                            className="absolute left-2 text-white bg-black bg-opacity-50 rounded-full p-2"
+                            onClick={() => setModalImageIndex((modalImageIndex - 1 + selectedProject.img.length) % selectedProject.img.length)}
+                        >
+                            <CircleChevronLeft className="w-6 h-6"/>
+                        </button>
+                        <button
+                            className="absolute right-2 text-white bg-black bg-opacity-50 rounded-full p-2"
+                            onClick={() => setModalImageIndex((modalImageIndex + 1) % selectedProject.img.length)}
+                        >
+                            <CircleChevronRight className="w-6 h-6"/>
+                        </button>
+                        </>
+                    )}
+                    </div>
 
                 {/* Text content below */}
                 <div className="flex flex-col flex-grow min-w-0">
