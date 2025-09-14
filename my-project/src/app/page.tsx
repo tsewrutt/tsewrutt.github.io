@@ -1,5 +1,5 @@
 "use client"
-import { TypewriterAnimation, StarryBackground } from "./animate"
+import { TypewriterAnimation } from "./animate"
 import { Download } from "lucide-react";
 import Link from "next/link";
 import Image from 'next/image'

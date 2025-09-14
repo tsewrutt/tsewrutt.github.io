@@ -24,7 +24,7 @@ export const TypewriterAnimation = ({ text }) => {
   );
 };
 
-export const StarryBackground = React.memo(() => {
+const StarryBackgroundComponent = () => {
   const stars = useMemo(() => {
     return [...Array(100)].map((_, i) => {
       const size = Math.random() * 3 + 1;
@@ -57,14 +57,16 @@ export const StarryBackground = React.memo(() => {
         />
       );
     });
-  }, []); // stars only generated once
+  }, []);
 
   return (
     <div className="absolute top-20 left-0 w-full h-[100%] z-0 overflow-hidden pointer-events-none">
       {stars}
     </div>
   );
-});
+};
+
+export const StarryBackground = React.memo(StarryBackgroundComponent);
 
 
 // Animation for Button

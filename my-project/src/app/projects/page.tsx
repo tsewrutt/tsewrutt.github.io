@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { projects, Project } from "../../data/projects"; // Import the project data
 import ProjectModal from "../ProjectModal"; // Import the modal component
 import { CircleChevronLeft, CircleChevronRight, Filter, SortAsc, SortDesc } from "lucide-react";
-import { SlideUp, StarryBackground } from "../animate"
+import { SlideUp } from "../animate"
 import Image from 'next/image'
 
 
