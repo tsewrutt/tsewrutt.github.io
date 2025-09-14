@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { projects, Project } from "../../data/projects"; // Import the project data
 import ProjectModal from "../ProjectModal"; // Import the modal component
-import { CircleChevronLeft, CircleChevronRight, Filter, SortAsc, SortDesc } from "lucide-react";
+import { ChevronLeft, ChevronRight, Filter, SortAsc, SortDesc } from "lucide-react";
 import { SlideUp } from "../animate"
 import Image from 'next/image'
 
@@ -19,15 +19,25 @@ export default function Projects() {
   const [hoveredImageIndex, setHoveredImageIndex] = useState<{ [key: number]: number }>({});
 
   // Function to start hover slideshow
+  // Function to start hover slideshow
   const handleMouseEnter = (projectId: number, imagesCount: number) => {
     if (imagesCount <= 1) return;
 
-    let index = 0;
-    const interval = setInterval(() => {
-      setHoveredImageIndex(prev => ({ ...prev, [projectId]: (index++) % imagesCount }));
-    }, 550); // change every 1.5s
+    // Clear any old interval first
+    clearInterval(hoveredImageIndex[`interval_${projectId}`]);
 
-    setHoveredImageIndex(prev => ({ ...prev, [`interval_${projectId}`]: interval }));
+    const interval = setInterval(() => {
+      setHoveredImageIndex(prev => {
+        const current = prev[projectId] || 0;
+        const next = (current + 1) % imagesCount; // <-- loops forever
+        return { ...prev, [projectId]: next };
+      });
+    }, 1000); // 1.5s per image
+
+    setHoveredImageIndex(prev => ({
+      ...prev,
+      [`interval_${projectId}`]: interval,
+    }));
   };
 
   const handleMouseLeave = (projectId: number) => {
@@ -160,13 +170,19 @@ export default function Projects() {
                   onClick={() => setSelectedProject(project)}
                   className="relative w-full h-40 sm:h-52 mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-md"
                 >
-                  <Image
-                    src={project.img[hoveredImageIndex[project.id] || 0]}
-                    alt={project.title}
-                    width={800}
-                    height={500}
-                    className="object-cover w-full h-full"
-                  />
+                  {project.img.map((img, i) => (
+                    <Image
+                      key={i}
+                      src={img}
+                      alt={project.title}
+                      width={800}
+                      height={500}
+                      className={`
+                        absolute inset-0 w-full h-full object-cover transition-opacity duration-700
+                        ${(hoveredImageIndex[project.id] ?? 0) === i ? "opacity-100" : "opacity-0"}
+                      `}
+                    />
+                  ))}
                 </div>
                 <div className="text-[var(--text-color)] text-sm flex flex-wrap gap-1 sm:gap-2">
                   {project.skill.split(",").slice(0, 3).map((keyword, index) => (
@@ -196,7 +212,7 @@ export default function Projects() {
             className={`px-4 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition-all duration-300 border border-[var(--border-color)] flex items-center gap-2 font-medium text-sm ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:border-[var(--accent-hover)]"
               }`}
           >
-            <CircleChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Previous</span>
           </button>
 
@@ -210,7 +226,7 @@ export default function Projects() {
               className="px-4 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition-all duration-300 border border-[var(--border-color)] hover:border-[var(--accent-hover)] flex items-center gap-2 font-medium text-sm"
             >
               <span className="hidden sm:inline">Next</span>
-              <CircleChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           )}
         </div>
