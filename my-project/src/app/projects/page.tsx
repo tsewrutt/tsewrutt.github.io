@@ -25,7 +25,7 @@ const handleMouseEnter = (projectId: number, imagesCount: number) => {
   let index = 0;
   const interval = setInterval(() => {
     setHoveredImageIndex(prev => ({ ...prev, [projectId]: (index++) % imagesCount }));
-  }, 1000); // change every 1.5s
+  }, 550); // change every 1.5s
 
   setHoveredImageIndex(prev => ({ ...prev, [`interval_${projectId}`]: interval }));
 };
