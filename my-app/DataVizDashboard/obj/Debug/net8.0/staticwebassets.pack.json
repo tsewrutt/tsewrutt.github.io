@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\toush\\OneDrive\\Desktop\\Repositories\\tsewrutt.github.io\\my-app\\DataVizDashboard\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\toush\\OneDrive\\Desktop\\Repositories\\tsewrutt.github.io\\my-app\\DataVizDashboard\\wwwroot\\js\\charts.js",
+      "PackagePath": "staticwebassets\\js\\charts.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DataVizDashboard.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DataVizDashboard.props",
+      "PackagePath": "build\\DataVizDashboard.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DataVizDashboard.props",
+      "PackagePath": "buildMultiTargeting\\DataVizDashboard.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DataVizDashboard.props",
+      "PackagePath": "buildTransitive\\DataVizDashboard.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

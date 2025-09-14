@@ -1,0 +1,133 @@
+@page "/"
+@inject IJSRuntime JSRuntime
+
+<PageTitle>DataViz Dashboard</PageTitle>
+
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>📊 DataViz Dashboard</h1>
+        <p>Real-time Analytics & Data Visualization</p>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon">👥</div>
+            <div class="metric-content">
+                <h3>1,250</h3>
+                <p>Total Users</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-icon">💰</div>
+            <div class="metric-content">
+                <h3>$135,000</h3>
+                <p>Total Revenue</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-icon">📋</div>
+            <div class="metric-content">
+                <h3>24</h3>
+                <p>Active Projects</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-icon">📈</div>
+            <div class="metric-content">
+                <h3>+12.5%</h3>
+                <p>Growth Rate</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="charts-grid">
+        <div class="chart-card">
+            <h3>Device Usage Distribution</h3>
+            <canvas id="deviceChart" width="400" height="200"></canvas>
+        </div>
+        
+        <div class="chart-card">
+            <h3>Recent Metrics</h3>
+            <div class="metrics-list">
+                <div class="metric-item">
+                    <span class="metric-name">Revenue</span>
+                    <span class="metric-value">135,000</span>
+                    <span class="metric-time">14:30</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-name">Users</span>
+                    <span class="metric-value">1,250</span>
+                    <span class="metric-time">14:25</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-name">Orders</span>
+                    <span class="metric-value">95</span>
+                    <span class="metric-time">14:20</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-name">Sessions</span>
+                    <span class="metric-value">2,340</span>
+                    <span class="metric-time">14:15</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-name">Bounce Rate</span>
+                    <span class="metric-value">32%</span>
+                    <span class="metric-time">14:10</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="users-section">
+        <h3>Recent Users</h3>
+        <div class="users-list">
+            <div class="user-item">
+                <div class="user-avatar">J</div>
+                <div class="user-info">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-email">john@example.com</div>
+                </div>
+                <div class="user-status">
+                    <span class="status-dot"></span>
+                    Active
+                </div>
+            </div>
+            <div class="user-item">
+                <div class="user-avatar">J</div>
+                <div class="user-info">
+                    <div class="user-name">Jane Smith</div>
+                    <div class="user-email">jane@example.com</div>
+                </div>
+                <div class="user-status">
+                    <span class="status-dot"></span>
+                    Active
+                </div>
+            </div>
+            <div class="user-item">
+                <div class="user-avatar">B</div>
+                <div class="user-info">
+                    <div class="user-name">Bob Johnson</div>
+                    <div class="user-email">bob@example.com</div>
+                </div>
+                <div class="user-status">
+                    <span class="status-dot"></span>
+                    Active
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeChart");
+        }
+    }
+}
+
