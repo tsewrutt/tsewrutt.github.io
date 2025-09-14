@@ -16,36 +16,36 @@ export default function Projects() {
   const projectsPerPage = 6; // Number of projects per page
 
   // Add new state to track hover image index
-const [hoveredImageIndex, setHoveredImageIndex] = useState<{[key: number]: number}>({});
+  const [hoveredImageIndex, setHoveredImageIndex] = useState<{ [key: number]: number }>({});
 
-// Function to start hover slideshow
-const handleMouseEnter = (projectId: number, imagesCount: number) => {
-  if (imagesCount <= 1) return;
+  // Function to start hover slideshow
+  const handleMouseEnter = (projectId: number, imagesCount: number) => {
+    if (imagesCount <= 1) return;
 
-  let index = 0;
-  const interval = setInterval(() => {
-    setHoveredImageIndex(prev => ({ ...prev, [projectId]: (index++) % imagesCount }));
-  }, 550); // change every 1.5s
+    let index = 0;
+    const interval = setInterval(() => {
+      setHoveredImageIndex(prev => ({ ...prev, [projectId]: (index++) % imagesCount }));
+    }, 550); // change every 1.5s
 
-  setHoveredImageIndex(prev => ({ ...prev, [`interval_${projectId}`]: interval }));
-};
+    setHoveredImageIndex(prev => ({ ...prev, [`interval_${projectId}`]: interval }));
+  };
 
-const handleMouseLeave = (projectId: number) => {
-  clearInterval(hoveredImageIndex[`interval_${projectId}`]);
-  setHoveredImageIndex(prev => ({ ...prev, [projectId]: 0 }));
-};
+  const handleMouseLeave = (projectId: number) => {
+    clearInterval(hoveredImageIndex[`interval_${projectId}`]);
+    setHoveredImageIndex(prev => ({ ...prev, [projectId]: 0 }));
+  };
 
   // Get all unique skills for filtering
   const allSkills = Array.from(new Set(projects.flatMap(p => p.skill.split(',').map(s => s.trim()))));
 
   // Sort and filter projects
   const sortedAndFilteredProjects = projects
-    .filter(project => 
+    .filter(project =>
       filterSkill === '' || project.skill.toLowerCase().includes(filterSkill.toLowerCase())
     )
     .sort((a, b) => {
       let comparison = 0;
-      
+
       switch (sortBy) {
         case 'date':
           // Parse dates for comparison (assuming format like "2025-06" or "2024-12")
@@ -60,7 +60,7 @@ const handleMouseLeave = (projectId: number) => {
           comparison = a.skill.localeCompare(b.skill);
           break;
       }
-      
+
       return sortOrder === 'asc' ? comparison : -comparison;
     });
 
@@ -84,21 +84,19 @@ const handleMouseLeave = (projectId: number) => {
   // Slice the sorted and filtered projects array to get the current page's projects
   const currentProjects = sortedAndFilteredProjects.slice(idxOfFirstProject, idxOfLastProject);
 
-    // Handle showing the next page
-    const handleNextPage = () => {
-      setCurrentPage(prevPage => prevPage + 1);
-    };
+  // Handle showing the next page
+  const handleNextPage = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
 
-    // Handle going back to the previous page
-    const handlePreviousPage = () => {
-      setCurrentPage(prevPage => (prevPage > 1 ? prevPage - 1 : 1));
-    };
+  // Handle going back to the previous page
+  const handlePreviousPage = () => {
+    setCurrentPage(prevPage => (prevPage > 1 ? prevPage - 1 : 1));
+  };
 
   return (
     // bg-[var(--background)] = page bckgrd
-    <div className="relative min-h-screen bg-[var(--background)] text-white">
-      <StarryBackground/>
-      
+    <div className="relative min-h-screen text-white">
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pt-20 sm:pt-24">
         {/* Compact Sorting and Filtering Controls */}
@@ -147,73 +145,72 @@ const handleMouseLeave = (projectId: number) => {
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-      {currentProjects.map((project, index) => (
-        <SlideUp
-          key={project.id}
-          keyProp={project.id}
-          delay={index * 0.05 }
-          className="bg-[var(--card)] p-4 sm:p-6 rounded-xl cursor-pointer hover:bg-[var(--card-hover)] transition-all duration-300 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)] shadow-lg hover:shadow-xl"
-        >
-          <div onClick={() => setSelectedProject(project)}>
-            <h3 className="text-lg sm:text-xl text-[var(--text-color)] font-bold mb-2 sm:mb-3">{project.title}</h3>
-            <div
-                onMouseEnter={() => handleMouseEnter(project.id, project.img.length)}
-                onMouseLeave={() => handleMouseLeave(project.id)}
-                onClick={() => setSelectedProject(project)}
-                className="relative w-full h-40 sm:h-52 mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-md"
-              >
-                <Image
-                  src={project.img[hoveredImageIndex[project.id] || 0]}
-                  alt={project.title}
-                  width={800}
-                  height={500}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            <div className="text-[var(--text-color)] text-sm flex flex-wrap gap-1 sm:gap-2">
-              {project.skill.split(",").slice(0, 3).map((keyword, index) => (
-                <span
-                  key={index}
-                  className="bg-[var(--card-bubbles)] text-[var(--text-color)] px-2 sm:px-3 py-1 border border-[var(--border-color)] rounded-full text-xs font-medium"
+          {currentProjects.map((project, index) => (
+            <SlideUp
+              key={project.id}
+              keyProp={project.id}
+              delay={index * 0.05}
+              className="bg-[var(--card)] p-4 sm:p-6 rounded-xl cursor-pointer hover:bg-[var(--card-hover)] transition-all duration-300 ease-in-out transform hover:scale-105 border border-[var(--border-color)] hover:border-[var(--accent-hover)] shadow-lg hover:shadow-xl"
+            >
+              <div onClick={() => setSelectedProject(project)}>
+                <h3 className="text-lg sm:text-xl text-[var(--text-color)] font-bold mb-2 sm:mb-3">{project.title}</h3>
+                <div
+                  onMouseEnter={() => handleMouseEnter(project.id, project.img.length)}
+                  onMouseLeave={() => handleMouseLeave(project.id)}
+                  onClick={() => setSelectedProject(project)}
+                  className="relative w-full h-40 sm:h-52 mb-3 sm:mb-4 rounded-lg overflow-hidden shadow-md"
                 >
-                  {keyword.trim()}
-                </span>
-              ))}
-              {project.skill.split(",").length > 3 && (
-                <span className="text-[var(--text-color)] text-xs px-2 py-1">
-                  +{project.skill.split(",").length - 3} more
-                </span>
-              )}
-            </div>
-          </div>
-        </SlideUp>
-      ))}
-    </div>
+                  <Image
+                    src={project.img[hoveredImageIndex[project.id] || 0]}
+                    alt={project.title}
+                    width={800}
+                    height={500}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="text-[var(--text-color)] text-sm flex flex-wrap gap-1 sm:gap-2">
+                  {project.skill.split(",").slice(0, 3).map((keyword, index) => (
+                    <span
+                      key={index}
+                      className="bg-[var(--card-bubbles)] text-[var(--text-color)] px-2 sm:px-3 py-1 border border-[var(--border-color)] rounded-full text-xs font-medium"
+                    >
+                      {keyword.trim()}
+                    </span>
+                  ))}
+                  {project.skill.split(",").length > 3 && (
+                    <span className="text-[var(--text-color)] text-xs px-2 py-1">
+                      +{project.skill.split(",").length - 3} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            </SlideUp>
+          ))}
+        </div>
 
         {/* Pagination */}
         <div className="flex justify-between items-center gap-4 mt-6 sm:mt-8">
           <button
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
-            className={`px-4 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition-all duration-300 border border-[var(--border-color)] flex items-center gap-2 font-medium text-sm ${
-              currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:border-[var(--accent-hover)]"
-            }`}
+            className={`px-4 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition-all duration-300 border border-[var(--border-color)] flex items-center gap-2 font-medium text-sm ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:border-[var(--accent-hover)]"
+              }`}
           >
-            <CircleChevronLeft className="w-4 h-4"/>
+            <CircleChevronLeft className="w-4 h-4" />
             <span className="hidden sm:inline">Previous</span>
           </button>
-          
+
           <div className="px-3 py-1 bg-[var(--card-bubbles)] text-[var(--text-color)] rounded-md border border-[var(--border-color)] font-medium text-sm">
             Page {currentPage}
           </div>
-          
+
           {idxOfLastProject < sortedAndFilteredProjects.length && (
             <button
               onClick={handleNextPage}
               className="px-4 py-2 bg-[var(--card)] text-[var(--text-color)] rounded-lg hover:bg-[var(--card-hover)] transition-all duration-300 border border-[var(--border-color)] hover:border-[var(--accent-hover)] flex items-center gap-2 font-medium text-sm"
             >
               <span className="hidden sm:inline">Next</span>
-              <CircleChevronRight className="w-4 h-4"/>
+              <CircleChevronRight className="w-4 h-4" />
             </button>
           )}
         </div>

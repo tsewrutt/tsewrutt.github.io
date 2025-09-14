@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/NavBar"; // <--- new file
+import { StarryBackground } from "./animate"
 
 export const metadata: Metadata = {
   title: "Home | Toushal Sewruttun",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body>
         <NavBar />
+
         <main className="relative">
+          <StarryBackground />
           {children}
         </main>
       </body>
