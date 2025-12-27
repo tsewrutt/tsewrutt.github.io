@@ -48,6 +48,7 @@ const App = () => {
 
           {/* Social Links */}
           <div className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base md:text-lg">
+            
             <a href="https://www.linkedin.com/in/tsewrutt" className="text-[var(--accent)] hover:underline">LinkedIn</a>
             <a href="https://github.com/tsewrutt" className="text-[var(--accent)] hover:underline">GitHub</a>
           </div>
